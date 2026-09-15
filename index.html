@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Backend//Book — the whole backend journey on one page. Learn PHP, SQL, Git, Laravel, APIs, Linux, Docker and deployment by shipping. 13 levels, 77 lessons, six real projects, one page." />
+  <title>Backend//Book — Learn the Backend by Shipping</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+
+    <div class="scroll-progress" aria-hidden="true"><span id="scrollBar"></span></div>
+
+    <!-- ============ NAV ============ -->
+    <nav class="navbar" id="navbar" aria-label="Primary">
+      <div class="navbar-inner">
+        <a href="#hero" class="brand" data-go="hero">
+          <span class="brand-mark" aria-hidden="true">&gt;_</span>
+          <span class="brand-text">Backend<span class="brand-accent">//Book</span></span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#hero" class="nav-link" data-go="hero">Home</a>
+          <a href="#roadmap" class="nav-link" data-go="roadmap">Roadmap</a>
+          <a href="#book" class="nav-link" data-go="book">The Book</a>
+          <a href="#practice" class="nav-link" data-go="practice">Practice</a>
+        </div>
+
+        <div class="nav-side">
+          <div class="xp-pill" id="xpPill" title="Your journey progress">
+            <span class="xp-level" id="xpLevel">Lv 0</span>
+            <span class="xp-bar"><span class="xp-bar-fill" id="xpBarFill"></span></span>
+            <span class="xp-count" id="xpCount">0 XP</span>
+          </div>
+          <button type="button" class="btn-start" data-go="book">Start Free</button>
+          <button type="button" class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="app-main">
+
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="hero">
+        <div class="hero-bg" aria-hidden="true">
+          <span class="orb orb-a"></span>
+          <span class="orb orb-b"></span>
+          <span class="orb orb-c"></span>
+          <span class="grid-lines"></span>
+        </div>
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <span class="hero-kicker">/* a different kind of tutorial */</span>
+            <h1 class="hero-title">
+              Learn the <span class="grad-volt">backend</span><br />
+              the way it actually works —<br />
+              <span id="heroWord" class="grad-ember">by shipping.</span>
+            </h1>
+            <p class="hero-sub">
+              One path: <strong>PHP · SQL · Git · Laravel · APIs · Linux · Docker · Deployment</strong>.
+              Type every example. Bank the XP. Ship six real projects — and get hired.
+            </p>
+            <div class="hero-actions">
+              <button type="button" class="btn-primary" data-go="book">Start the Journey →</button>
+              <button type="button" class="btn-ghost" data-go="roadmap">See the Roadmap</button>
+            </div>
+            <ul class="hero-stats">
+              <li><strong data-stat="levels">13</strong><span>Levels</span></li>
+              <li><strong data-stat="lessons">77</strong><span>Lessons</span></li>
+              <li><strong data-stat="quizzes">22</strong><span>Self-checks</span></li>
+              <li><strong data-stat="projects">6</strong><span>Projects</span></li>
+              <li class="stat-free"><strong>100%</strong><span>Free</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-stage" aria-hidden="true">
+            <div class="term">
+              <div class="term-bar">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <span class="term-file">chapter-02 / variables.php</span>
+                <span class="term-lang">php</span>
+              </div>
+              <pre class="term-body" id="heroTerm"></pre>
+            </div>
+            <span class="chip chip-1">🐘 PHP</span>
+            <span class="chip chip-2">🗄️ MySQL</span>
+            <span class="chip chip-3">🐳 Docker</span>
+            <span class="chip chip-4">🔌 APIs</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TICKER ============ -->
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track" id="tickerTrack"></div>
+      </div>
+
+      <!-- ============ ROADMAP ============ -->
+      <section class="roadmap" id="roadmap">
+        <div class="section-inner">
+          <header class="section-head">
+            <span class="section-kicker">// 13 levels, one path</span>
+            <h2 class="section-title">Your <span class="grad-volt">Roadmap</span></h2>
+            <p class="section-sub">
+              Every level lights up as you finish it in the book below. Finish a level → bank the XP → keep playing.
+            </p>
+            <div class="roadmap-meter">
+              <div class="xp-bar"><span class="xp-bar-fill" id="roadmapBar"></span></div>
+              <span class="meter-note" id="roadmapNote">0 / 13 levels</span>
+            </div>
+          </header>
+          <div class="map" id="journeyMap"></div>
+        </div>
+      </section>
+
+      <!-- ============ THE BOOK ============ -->
+      <section class="book" id="book">
+        <div class="book-shell">
+          <aside class="toc" id="toc" aria-label="Chapters">
+            <p class="toc-kicker">The Path</p>
+            <nav class="toc-list" id="tocList"></nav>
+            <div class="toc-meter">
+              <p>Journey meter</p>
+              <div class="xp-bar"><span class="xp-bar-fill" id="journeyMiniFill"></span></div>
+              <span class="meter-note" id="journeyMiniNote">0 / 13 levels</span>
+            </div>
+          </aside>
+
+          <div class="reader">
+            <article class="page">
+              <header class="book-intro">
+                <span class="section-kicker">// the whole book, one page</span>
+                <h2 class="chapter-title">The Lessons</h2>
+                <p class="chapter-sub">
+                  Scroll the path. Read, type, answer, build. Finish a chapter and its slot on the roadmap lights up.
+                </p>
+              </header>
+              <div id="bookHolder"></div>
+
+              <footer class="book-end">
+                <span class="book-end-icon" aria-hidden="true">🏁</span>
+                <h2 class="chapter-title">The end of the path — now go build.</h2>
+                <p>You finished the whole journey: XP banked, levels lit, six real apps shipped. Now go get hired.</p>
+                <div class="book-end-actions">
+                  <button type="button" class="btn-primary" data-go="practice">Test yourself in Practice</button>
+                  <button type="button" class="btn-ghost" data-go="hero">Back to Top</button>
+                </div>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PRACTICE ============ -->
+      <section class="practice" id="practice">
+        <div class="section-inner">
+          <header class="section-head">
+            <span class="section-kicker">// practice arena</span>
+            <h2 class="section-title">Practice: <span class="grad-ember">Prove Yourself</span></h2>
+            <p class="section-sub">Random self-checks from the whole book. Answer honestly, bank the XP, keep the streak alive.</p>
+          </header>
+
+          <div class="quiz-start" id="quizStart">
+            <div class="quiz-icon">🎮</div>
+            <h3>Ready to prove yourself?</h3>
+            <p>Every correct self-check gives <strong>+10 XP</strong>. Wrong answers teach. Streaks double your shine.</p>
+            <div class="quiz-start-meta">
+              <span>Best streak: <strong id="bestStreak">0</strong></span>
+              <span>Total XP: <strong id="quizXpTotal">0</strong></span>
+            </div>
+            <button type="button" class="btn-primary" id="quizBegin">Start Practice →</button>
+          </div>
+
+          <div class="quiz-card" id="quizCard" hidden>
+            <div class="quiz-top">
+              <span class="quiz-src" id="quizSrc">Chapter 1</span>
+              <span class="quiz-streak" id="quizStreak">🔥 0</span>
+              <button type="button" class="quiz-quit" id="quizQuit">✕ End</button>
+            </div>
+            <p class="quiz-q" id="quizQ"></p>
+            <div class="quiz-options" id="quizOptions"></div>
+            <div class="quiz-reveal" id="quizReveal" hidden></div>
+            <div class="quiz-verdict" id="quizVerdict"></div>
+            <p class="quiz-note">Be honest — this is training, not a grade.</p>
+          </div>
+
+          <div class="quiz-done" id="quizDone" hidden>
+            <div class="quiz-icon">🎉</div>
+            <h3>Well played!</h3>
+            <p id="quizDoneText"></p>
+            <button type="button" class="btn-primary" id="quizAgain">Play again →</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>Now go build something.</p>
+        <span class="footer-code">&lt;/Backend//Book&gt;</span>
+      </div>
+    </footer>
+
+    <canvas id="confetti" aria-hidden="true"></canvas>
+    <div class="toast" id="toast" hidden>
+      <span class="toast-ico" aria-hidden="true">🏆</span>
+      <span id="toastText">Level complete!</span>
+    </div>
+
+  </div>
+
+  <script src="part1.js"></script>
+  <script src="part2.js"></script>
+  <script src="part3.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
